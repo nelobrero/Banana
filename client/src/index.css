@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* body { font-family: system-ui, sans-serif; margin: 0; } */
+
+:root {
+  --font-family: "Jost", sans-serif;
+  --font-family-alt: "Work Sans", sans-serif;
+  --font-size: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 32px;
+  --line-height: 1.5;
+  --line-height-lg: 1.75;
+  --line-height-xl: 2;
+  --bg:#FFF9F2;
+  --text-color: #333;
+  --color-primary: #000000;
+  --color-secondary: #FFD93D;
+  --color-accent: #6BCB77;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--font-body);
+  color: var(--text);
+}
