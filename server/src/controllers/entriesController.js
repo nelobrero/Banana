@@ -18,18 +18,18 @@ async function getEntries(req, res) {
 async function createEntry(req, res) {
   const { caption, location, entry_date } = req.body;
 
-  if (!req.file) {
-    return res.status(400).json({ error: 'An image is required' });
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ error: 'At least one image is required' });
   }
 
   try {
-    const imageUrl = req.file.path; // Cloudinary URL via multer-storage-cloudinary
+    const imageUrls = req.files.map((file) => file.path); // Cloudinary URLs via multer-storage-cloudinary
 
     const result = await pool.query(
-      `INSERT INTO entries (user_id, caption, image_url, location, entry_date)
-       VALUES ($1, $2, $3, $4, COALESCE($5, CURRENT_DATE))
+      `INSERT INTO entries (user_id, caption, image_url, image_urls, location, entry_date)
+       VALUES ($1, $2, $3, $4, $5, COALESCE($6, CURRENT_DATE))
        RETURNING *`,
-      [req.user.id, caption || null, imageUrl, location || null, entry_date || null]
+      [req.user.id, caption || null, imageUrls[0], imageUrls, location || null, entry_date || null]
     );
 
     res.status(201).json(result.rows[0]);

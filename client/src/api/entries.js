@@ -5,9 +5,9 @@ export async function getEntries() {
   return data;
 }
 
-export async function createEntry({ caption, location, entry_date, imageFile }) {
+export async function createEntry({ caption, location, entry_date, imageFiles }) {
   const formData = new FormData();
-  formData.append('image', imageFile);
+  imageFiles.forEach((file) => formData.append('images', file));
   if (caption) formData.append('caption', caption);
   if (location) formData.append('location', location);
   if (entry_date) formData.append('entry_date', entry_date);

@@ -16,7 +16,7 @@ const upload = multer({ storage });
 router.use(requireAuth);
 
 router.get('/', getEntries);
-router.post('/', upload.single('image'), createEntry);
+router.post('/', upload.array('images', 10), createEntry);
 router.put('/:id', updateEntry);
 router.delete('/:id', deleteEntry);
 

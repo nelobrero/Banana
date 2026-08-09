@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { getEntries, createEntry, deleteEntry } from '../api/entries';
 import { useAuth } from '../context/AuthContext';
+import ImageCarousel from '../components/ImageCarousel';
 
 export default function Home() {
   const { user, logoutUser } = useAuth();
   const [entries, setEntries] = useState([]);
   const [caption, setCaption] = useState('');
   const [location, setLocation] = useState('');
-  const [imageFile, setImageFile] = useState(null);
+  const [imageFiles, setImageFiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -29,18 +30,18 @@ export default function Home() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!imageFile) {
+    if (imageFiles.length === 0) {
       setError('Please select an image');
       return;
     }
     setSubmitting(true);
     setError('');
     try {
-      const newEntry = await createEntry({ caption, location, imageFile });
+      const newEntry = await createEntry({ caption, location, imageFiles });
       setEntries([newEntry, ...entries]);
       setCaption('');
       setLocation('');
-      setImageFile(null);
+      setImageFiles([]);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to create entry');
     } finally {
@@ -71,7 +72,8 @@ export default function Home() {
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => setImageFile(e.target.files[0])}
+            multiple
+            onChange={(e) => setImageFiles(Array.from(e.target.files).slice(0, 10))}
             required
           />
           <input
@@ -102,7 +104,7 @@ export default function Home() {
         ) : (
           entries.map((entry) => (
             <div key={entry.id} style={{ marginBottom: '2rem' }}>
-              <img src={entry.image_url} alt={entry.caption || 'entry'} width="300" />
+              <ImageCarousel images={entry.image_urls || [entry.image_url]} width="400" height="400" />
               <p>{entry.caption}</p>
               {entry.location && <p>📍 {entry.location}</p>}
               <p>{new Date(entry.entry_date).toLocaleDateString()}</p>
