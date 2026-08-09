@@ -1,7 +1,6 @@
 # Adventure Log
 
-A personal diary app — photo + caption entries, just for you. Built to practice React,
-Node/Express, Postgres, and JWT auth from scratch.
+A personal diary app — photo + caption entries, just for you.
 
 ## Stack
 - **Frontend:** React + Vite, React Router, Axios
