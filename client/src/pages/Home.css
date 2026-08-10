@@ -1,0 +1,16 @@
+.header-style {
+    display: flex;             
+    flex-direction: row;       
+    align-items: center;        
+    justify-content: space-between; 
+    gap: 10px;                  
+    padding:  10px 100px 10px 100px;
+}
+
+.entries-section {
+    display: flex;
+    align-items: center;        
+    flex-direction: column;
+    gap: 20px;
+    padding:  10px 100px 10px 100px;
+}

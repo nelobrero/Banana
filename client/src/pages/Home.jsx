@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getEntries, createEntry, deleteEntry } from '../api/entries';
 import { useAuth } from '../context/AuthContext';
 import ImageCarousel from '../components/ImageCarousel';
+import './Home.css';
 
 export default function Home() {
   const { user, logoutUser } = useAuth();
@@ -60,9 +61,9 @@ export default function Home() {
 
   return (
     <div>
-      <header>
-        <h1>My Adventure Log</h1>
-        <p>Welcome, {user?.username}</p>
+      <header className="header-style">
+        <h1>Banana</h1>
+        {/* <p>Welcome, {user?.username}</p> */}
         <button onClick={logoutUser}>Log out</button>
       </header>
 
@@ -95,8 +96,7 @@ export default function Home() {
         </form>
       </section>
 
-      <section>
-        <h2>Your Entries</h2>
+      <section className="entries-section">
         {loading ? (
           <p>Loading...</p>
         ) : entries.length === 0 ? (
