@@ -66,8 +66,10 @@ export default function Home() {
       <header className="header-style">
         <h1>Banana</h1>
         {/* <p>Welcome, {user?.username}</p> */}
-        <button onClick={() => setShowModal(true)}>Add Entry</button>
-        <button onClick={logoutUser}>Log out</button>
+        <div className="nav-links">
+          <span className="nav-link" onClick={() => setShowModal(true)}>Add Entry</span>
+          <span className="nav-link" onClick={logoutUser}>Log out</span>
+        </div>
       </header>
 
        <section className="entries-section">

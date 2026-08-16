@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './AddEntry.css';
 
 export default function ImageCarousel({ images, width, height }) {
   const [current, setCurrent] = useState(0);
