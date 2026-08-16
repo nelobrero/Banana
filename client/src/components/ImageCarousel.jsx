@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './AddEntry.css';
+import './ImageCarousel.css';
 
 export default function ImageCarousel({ images, width, height }) {
   const [current, setCurrent] = useState(0);
@@ -18,10 +18,12 @@ export default function ImageCarousel({ images, width, height }) {
     <div className="carousel">
       <img src={images[current]} alt={`photo ${current + 1}`} width={width} height={height} style={{ objectFit: 'cover' }} />
       {images.length > 1 && (
+        <div>
         <div className="carousel-controls">
           <button onClick={goPrev}>‹</button>
-          <span>{current + 1} / {images.length}</span>
           <button onClick={goNext}>›</button>
+        </div>
+        <span className="carousel-index">{current + 1} / {images.length}</span>
         </div>
       )}
     </div>

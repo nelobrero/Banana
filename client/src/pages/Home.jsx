@@ -79,12 +79,22 @@ export default function Home() {
           <p>No entries yet. Add your first adventure above!</p>
         ) : (
           entries.map((entry) => (
-            <div key={entry.id} style={{ marginBottom: '2rem' }}>
+            <div key={entry.id} className="entry-card" style={{ marginBottom: '2rem' }}>
+              <div className="entry-actions">
+                <button className="delete-button" onClick={() => handleDelete(entry.id)}>
+                  Delete
+                </button>
+              </div>
               <ImageCarousel images={entry.image_urls || [entry.image_url]} width="400" height="400" />
-              <p>{entry.caption}</p>
-              {entry.location && <p>📍 {entry.location}</p>}
-              <p>{new Date(entry.entry_date).toLocaleDateString()}</p>
-              <button onClick={() => handleDelete(entry.id)}>Delete</button>
+              <div className="entry-details">
+                 {entry.location && <p className="entry-location">{entry.location}</p>}
+              <p className="entry-date">{new Date(entry.entry_date).toLocaleDateString()}</p>
+              </div>
+             <div className="entry-caption">
+                <hr className="caption-divider"/>
+                <p>{entry.caption}</p>
+                <hr className="caption-divider"/>
+             </div>
             </div>
           ))
         )}

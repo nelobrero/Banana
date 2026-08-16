@@ -22,31 +22,3 @@
   gap: 16px;
 }
 
-.carousel {
-  position: relative;
-  width: 400px;
-  height: 400px;
-}
-
-.carousel-controls button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  border-radius: 4px;
-}
-
-
-
-.carousel-controls button:first-child {
-  left: 8px;
-}
-
-.carousel-controls button:last-child {
-  right: 8px;
-}

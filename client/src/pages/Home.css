@@ -29,3 +29,54 @@
     .nav-link:hover {
         color: var(--color-secondary);
     }
+
+.entry-card {
+  position: relative;
+  width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+.entry-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+
+.delete-btn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.entry-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 8px;
+  font-family: var(--font-family);
+}
+
+.entry-location {
+  font-size: 1rem;
+}
+
+.entry-date {
+  font-size: 0.80rem;
+  color: #888;
+}
+
+.entry-caption {
+  text-align:justify;
+  margin-top: 8px;
+  font-family: var(--font-family);
+}
+
+.caption-divider {
+  border: none;
+  border-top: 1px solid #ff0000;
+  margin: 8px 0;
+}
