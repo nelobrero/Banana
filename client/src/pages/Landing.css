@@ -3,6 +3,138 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+.landing-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+}
+
+.landing-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+.landing-hero h1 {
+  font-size: clamp(10rem, 5vw, 4rem);
+}
+
+.landing-hero h2 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  max-width: 600px;
+}
+
+.landing-cta{
+  width: clamp(150px, 20vw, 300px);
+  padding: clamp(12px, 2vw, 16px);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.landing-bottom {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-color);
+}
+
+/* section 2 */
+
+.landing-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.slider-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.preview-placeholder {
+  width: 700px;
+  height: 400px;
+  background-color: #e0d5c8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Row 1: right to left */
+.preview-row1 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+/* Row 2: left to right */
+.preview-row2
+ {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+
+/* section 3 */
+
+.landing-description {
+  background-image: url('section3.png');
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-color);
+}
+
+.landing-description p {
+  color: var(--text-color-white);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
