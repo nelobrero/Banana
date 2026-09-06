@@ -59,13 +59,4 @@ Visit http://localhost:5173
 
 Authenticated requests need header: `Authorization: Bearer <token>`
 
-## Current state
-- ✅ Backend fully wired: signup/login, JWT auth, entries CRUD, Cloudinary upload
-- ✅ Frontend fully wired: signup/login pages, protected home route, create/list/delete entries
-- ⬜ No styling yet — intentionally left bare so you can design it yourself
-- ⬜ Not yet deployed
 
-## Deploy later
-- Frontend → Vercel
-- Backend → Railway or Render
-- Database → already on Neon (works as-is)
