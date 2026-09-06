@@ -5,6 +5,8 @@
   justify-content: center;
   background-color: var(--primary-color);
   font-family: var(--font-family);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .landing-header {
@@ -26,8 +28,9 @@
   padding: 2rem;
 }
 .landing-hero h1 {
-  font-size: clamp(10rem, 5vw, 4rem);
+  font-size: clamp(8rem, 1.5vw, 1.5rem);
 }
+
 
 .landing-hero h2 {
   font-size: clamp(1rem, 2vw, 1.5rem);
@@ -47,11 +50,6 @@
 }
 
 
-.landing-bottom {
-  text-align: center;
-  margin: 2rem 0;
-  color: var(--text-color);
-}
 
 /* section 2 */
 
@@ -75,13 +73,10 @@
 }
 
 .preview-placeholder {
-  width: 700px;
-  height: 400px;
-  background-color: #e0d5c8;
+  width: clamp(250px, 40vw, 700px);
+  height: clamp(150px, 25vw, 400px);
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -128,6 +123,84 @@
   max-width: 600px;
   line-height: 1.5;
 }
+
+
+/* Section 4 */
+
+.landing-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 8vw, 10rem); /* gap shrinks with screen */
+  padding: 2rem;
+  flex-wrap: wrap; /* wraps on very small screens */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.step h3 {
+  color: var(--text-color-white);
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem); /* shrinks with screen */
+  background-color: var(--color-primary);
+  padding: clamp(6px, 1vw, 12px) clamp(20px, 4vw, 64px); /* padding shrinks too */
+  border-radius: 100px;
+  display: inline-block;
+}
+
+
+.step-icon {
+  width: clamp(60px, 12vw, 150px); /* shrinks with screen */
+  height: clamp(60px, 12vw, 150px);
+}
+
+
+/* section 5 */
+
+.landing-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bottom-container h1 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  max-width: 600px;
+  text-align: center;
+}
+
 
 @keyframes slideLeft {
   0% { transform: translateX(0); }

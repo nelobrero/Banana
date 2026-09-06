@@ -8,6 +8,10 @@ import img4 from '../assets/4.png';
 import img5 from '../assets/5.png';
 import img6 from '../assets/6.png';
 import section3bg from '../assets/section3.png';
+import section5bg from '../assets/section5.png';
+import icon1 from '../assets/snap.png';
+import icon2 from '../assets/taste.png';
+import icon3 from '../assets/share.png';
 
 export default function Landing() {
 
@@ -89,27 +93,34 @@ useEffect(() => {
 
       {/* Section 4: Steps */}
       <section className="landing-steps">
-        <div className="step">
-          <span className="step-icon">📷</span>
-          <h3>Snap</h3>
-          <p>Take a photo of your meal</p>
+        <div className="steps-container">
+          <div className="step">
+          <span>
+            <img src={icon1} className="step-icon"/>
+          </span>
+          <h3>Snap it</h3>
         </div>
         <div className="step">
-          <span className="step-icon">✍️</span>
-          <h3>Review</h3>
-          <p>Share your honest thoughts</p>
+          <span>
+            <img src={icon2} className="step-icon"/>
+          </span>
+          <h3>Taste it</h3>
         </div>
         <div className="step">
-          <span className="step-icon">🌍</span>
-          <h3>Share</h3>
-          <p>Connect with food lovers</p>
+          <span>
+            <img src={icon3} className="step-icon"/>
+          </span>
+          <h3>Share it</h3>
+         </div>
         </div>
       </section>
 
       {/* Section 5: Bottom CTA */}
-      <section className="landing-bottom">
-        <h2>What Did You Eat Today?</h2>
-        <button className="landing-cta" onClick={() => window.location.href = '/signup'}>Share It Now</button>
+      <section className="landing-bottom" style={{ backgroundImage: `url(${section5bg})`}}>
+        <div className="bottom-container">
+          <h1>What Did You Eat Today?</h1>
+          <button className="landing-cta" onClick={() => window.location.href = '/signup'}>Share It Now</button>
+        </div>
       </section>
 
     </div>
