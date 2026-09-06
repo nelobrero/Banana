@@ -76,7 +76,7 @@ useEffect(() => {
       </section>
 
       {/* Section 3: Description */}
-      <section className="landing-description">
+      <section className="landing-description" style={{ backgroundImage: `url(${section3bg})` }}>
         <div>
           <p>
           Tell the world what you think about the food you love or the food you
