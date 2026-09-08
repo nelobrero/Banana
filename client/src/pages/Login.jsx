@@ -19,7 +19,7 @@ export default function Login() {
     try {
       const data = await login({ username, password });
       loginUser(data);
-      navigate('/');
+      navigate('/home');
     } catch (err) {
       setError(err.response?.data?.error || 'Login failed');
     } finally {
